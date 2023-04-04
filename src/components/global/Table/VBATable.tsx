@@ -40,7 +40,7 @@ function VBATable({ header, body }: Props) {
                 <Th
                   key={key}
                   textTransform="initial"
-                  p={{ base: 4, md: 8 }}
+                  p={{ base: 4, md: 6 }}
                   borderBottom={0}
                 >
                   <VBAText variant="H7">{item.label}</VBAText>
@@ -59,7 +59,7 @@ function VBATable({ header, body }: Props) {
                   _last={{ borderBottom: "none" }}
                 >
                   {header.map(({ dataIndex, render }, columnKey) => (
-                    <Td key={columnKey} p={{ base: 4, md: 8 }} borderBottom={0}>
+                    <Td key={columnKey} p={{ base: 4, md: 6 }} borderBottom={0}>
                       <VBAText variant="H6">{row[dataIndex]}</VBAText>
                     </Td>
                   ))}
@@ -68,7 +68,7 @@ function VBATable({ header, body }: Props) {
             ) : (
               <Tr>
                 <Td
-                  p={{ base: 4, md: 8 }}
+                  p={{ base: 4, md: 6 }}
                   fontSize="sm"
                   colSpan={header.length}
                   textAlign="center"

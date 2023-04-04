@@ -1,3 +1,5 @@
+import { ComponentWithAs, IconProps } from "@chakra-ui/react";
+
 export interface ISignalGroup {
   name: string;
   avatar: string;
@@ -11,4 +13,11 @@ export interface ISignalGroup {
   totalMembers: number;
   connectionRequest: number;
   activeEmails: string[];
+}
+
+export interface IMenu {
+  name: string;
+  icon: ComponentWithAs<"svg", IconProps>;
+  href: string;
+  isAutoActive?: boolean;
 }

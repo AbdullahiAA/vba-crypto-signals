@@ -9,11 +9,12 @@ function WalletBalance() {
 
       <Flex
         gap={8}
-        flexDir={{ base: "column", lg: "row" }}
+        flexDir={{ base: "column-reverse", lg: "row" }}
         align={{ lg: "flex-end" }}
         justify="space-between"
+        flex={1}
       >
-        <Flex gap="15px" flexDir="column">
+        <Flex gap="15px" flexDir={{ md: "column" }}>
           <WalletBalanceItem
             color="accent.orange"
             coin="BTC"
@@ -36,7 +37,11 @@ function WalletBalance() {
           />
         </Flex>
 
-        <Circle size="170px" border="3px solid rgba(0, 182, 255, 0.2)"></Circle>
+        <Circle
+          size="170px"
+          border="3px solid rgba(0, 182, 255, 0.2)"
+          mx={{ base: "auto", md: "initial" }}
+        ></Circle>
       </Flex>
     </GrayCard>
   );

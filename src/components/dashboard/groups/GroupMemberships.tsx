@@ -8,8 +8,8 @@ interface Props {
 
 function GroupMemberships({ group }: Props) {
   return (
-    <BorderCard p={0} as={Flex} gap={6} flexDir="column">
-      <Flex gap={6} flexDir="column" p={4}>
+    <BorderCard p={0} as={Flex} gap={2} flexDir="column">
+      <Flex gap={6} flexDir="column" px={4} pt={4}>
         <VBAText variant="H6">Memberships</VBAText>
 
         <Flex>

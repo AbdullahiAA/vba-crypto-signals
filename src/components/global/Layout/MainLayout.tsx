@@ -1,9 +1,17 @@
-import { Avatar, Box, BoxProps, Flex, HStack, Image } from "@chakra-ui/react";
-import logo from "assets/images/logo.png";
-import profileImg from "assets/images/profile.png";
-import { VBAText } from "..";
+import {
+  Box,
+  BoxProps,
+  Drawer,
+  DrawerContent,
+  DrawerOverlay,
+  Flex,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { SideBar, TopBar } from "..";
 
 function MainLayout({ children }: BoxProps) {
+  const mobileSidebarDisclosure = useDisclosure();
+
   return (
     <Flex
       flexDir="column"
@@ -12,29 +20,30 @@ function MainLayout({ children }: BoxProps) {
       bgColor="gray.800"
       overflow="hidden"
     >
-      <Flex
-        gap={4}
-        align="center"
-        justify="space-between"
-        py="20px"
-        ps="32px"
-        pe="80px"
-        bgColor="gray.700"
-        borderBottom="1px solid"
-        borderBottomColor="gray.600"
-      >
-        <Image src={logo} alt="Logo" maxW="85px" />
-
-        <HStack>
-          <Avatar src={profileImg} name="Martinez George" boxSize={10} />
-          <VBAText variant="H6">Martinez George</VBAText>
-        </HStack>
-      </Flex>
+      <TopBar openMobileMenu={mobileSidebarDisclosure.onOpen} />
 
       <Flex flex={1} overflow="hidden">
-        {/* <Box w="230px" bgColor="gray.700" overflowY="auto">
-          Sidebar
-        </Box> */}
+        {/* DESKTOP Sidebar */}
+        <SideBar display={{ base: "none", lg: "block" }} maxW="230px" />
+
+        {/* MOBILE Sidebar */}
+        <Drawer
+          autoFocus={false}
+          isOpen={mobileSidebarDisclosure.isOpen}
+          placement="left"
+          onClose={mobileSidebarDisclosure.onClose}
+          returnFocusOnClose={false}
+          onOverlayClick={mobileSidebarDisclosure.onClose}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <SideBar
+              isOverlay
+              closeMobileMenu={mobileSidebarDisclosure.onClose}
+            />
+          </DrawerContent>
+        </Drawer>
+
         <Box flex={1} minH="full" p={{ base: 4, md: 8 }} overflowY="auto">
           <Box
             flex={1}

@@ -1,9 +1,7 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { otherGroups } from "helpers/data";
 import { useState } from "react";
-import GroupMemberships from "./GroupMemberships";
-import GroupOverview from "./GroupOverview";
-import GroupsList from "./GroupsList";
+import { GroupMemberships, GroupOverview, GroupsList } from "..";
 
 function OtherGroups() {
   const [activeGroup, setActiveGroup] = useState(otherGroups[0]);
