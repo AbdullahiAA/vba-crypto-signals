@@ -1,14 +1,7 @@
-import {
-  Avatar,
-  Box,
-  BoxProps,
-  Flex,
-  HStack,
-  Image,
-  Text,
-} from "@chakra-ui/react";
+import { Avatar, Box, BoxProps, Flex, HStack, Image } from "@chakra-ui/react";
 import logo from "assets/images/logo.png";
 import profileImg from "assets/images/profile.png";
+import { VBAText } from "..";
 
 function MainLayout({ children }: BoxProps) {
   return (
@@ -34,20 +27,20 @@ function MainLayout({ children }: BoxProps) {
 
         <HStack>
           <Avatar src={profileImg} name="Martinez George" boxSize={10} />
-          <Text>Martinez George</Text>
+          <VBAText variant="H6">Martinez George</VBAText>
         </HStack>
       </Flex>
 
       <Flex flex={1} overflow="hidden">
-        <Box w="230px" bgColor="gray.700" overflowY="auto">
+        {/* <Box w="230px" bgColor="gray.700" overflowY="auto">
           Sidebar
-        </Box>
-        <Box flex={1} minH="full" p={8} overflowY="auto">
+        </Box> */}
+        <Box flex={1} minH="full" p={{ base: 4, md: 8 }} overflowY="auto">
           <Box
             flex={1}
             maxW="container.xl"
             minH="full"
-            p={6}
+            p={{ base: 3, md: 6 }}
             bgColor="gray.700"
           >
             {children}

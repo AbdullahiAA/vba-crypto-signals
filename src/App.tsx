@@ -1,12 +1,13 @@
 import * as React from "react";
-import { ChakraProvider, Text } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { MainLayout } from "components/global";
 import customTheme from "utils/customTheme";
+import { DashboardContainer } from "containers";
 
 export const App = () => (
   <ChakraProvider theme={customTheme}>
     <MainLayout>
-      <Text>Dashboard</Text>
+      <DashboardContainer />
     </MainLayout>
   </ChakraProvider>
 );
