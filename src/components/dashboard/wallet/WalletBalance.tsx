@@ -14,7 +14,11 @@ function WalletBalance() {
         justify="space-between"
         flex={1}
       >
-        <Flex gap="15px" flexDir={{ md: "column" }}>
+        <Flex
+          gap="15px"
+          flexDir={{ md: "column" }}
+          mx={{ base: "auto", md: "initial" }}
+        >
           <WalletBalanceItem
             color="accent.orange"
             coin="BTC"

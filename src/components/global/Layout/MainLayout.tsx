@@ -6,11 +6,18 @@ import {
   DrawerOverlay,
   Flex,
   useDisclosure,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { SideBar, TopBar } from "..";
 
 function MainLayout({ children }: BoxProps) {
   const mobileSidebarDisclosure = useDisclosure();
+  const isSidebarOverlay = useMediaQuery("(max-width: 991.5px)", {
+    ssr: true,
+    fallback: false,
+  })[0];
+
+  console.log(isSidebarOverlay);
 
   return (
     <Flex
@@ -27,22 +34,24 @@ function MainLayout({ children }: BoxProps) {
         <SideBar display={{ base: "none", lg: "block" }} maxW="230px" />
 
         {/* MOBILE Sidebar */}
-        <Drawer
-          autoFocus={false}
-          isOpen={mobileSidebarDisclosure.isOpen}
-          placement="left"
-          onClose={mobileSidebarDisclosure.onClose}
-          returnFocusOnClose={false}
-          onOverlayClick={mobileSidebarDisclosure.onClose}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <SideBar
-              isOverlay
-              closeMobileMenu={mobileSidebarDisclosure.onClose}
-            />
-          </DrawerContent>
-        </Drawer>
+        {isSidebarOverlay && (
+          <Drawer
+            autoFocus={false}
+            isOpen={mobileSidebarDisclosure.isOpen}
+            placement="left"
+            onClose={mobileSidebarDisclosure.onClose}
+            returnFocusOnClose={false}
+            onOverlayClick={mobileSidebarDisclosure.onClose}
+          >
+            <DrawerOverlay />
+            <DrawerContent>
+              <SideBar
+                isOverlay
+                closeMobileMenu={mobileSidebarDisclosure.onClose}
+              />
+            </DrawerContent>
+          </Drawer>
+        )}
 
         <Box flex={1} minH="full" p={{ base: 4, md: 8 }} overflowY="auto">
           <Box

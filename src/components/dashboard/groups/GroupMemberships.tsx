@@ -41,8 +41,9 @@ function GroupMemberships({ group }: Props) {
         <VBAText variant="H6" p={4}>
           Active Member Emails
         </VBAText>
-        {group.activeEmails.map((email) => (
+        {group.activeEmails.map((email, index) => (
           <VBAText
+            key={index}
             variant="H7"
             p={4}
             borderTop="1px solid"

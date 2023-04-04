@@ -68,7 +68,7 @@ export const NotificationsIcon = createIcon({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_3582_26)">
+      <g clipPath="url(#clip0_3582_26)">
         <path
           d="M12 22.8533C12.42 22.8436 12.823 22.6857 13.1378 22.4075C13.4525 22.1294 13.6588 21.7488 13.72 21.3333H10.2134C10.2764 21.7601 10.4923 22.1496 10.8209 22.4292C11.1496 22.7088 11.5686 22.8595 12 22.8533Z"
           fill="currentColor"

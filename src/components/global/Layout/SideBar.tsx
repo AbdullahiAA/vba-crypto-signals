@@ -41,7 +41,11 @@ function SideBar({ isOverlay, closeMobileMenu, ...rest }: Props) {
               borderBottomColor="gray.600"
             />
           ) : (
-            <SideBarItem menu={menu} key={index} />
+            <SideBarItem
+              menu={menu}
+              key={index}
+              closeMobileMenu={closeMobileMenu}
+            />
           )
         )}
       </Flex>

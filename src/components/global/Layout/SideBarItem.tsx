@@ -4,9 +4,10 @@ import { VBAText } from "..";
 
 interface Props {
   menu: IMenu;
+  closeMobileMenu?: () => void;
 }
 
-function SideBarItem({ menu }: Props) {
+function SideBarItem({ menu, closeMobileMenu }: Props) {
   const isActive = menu.name === "Dashboard";
 
   return (
@@ -21,6 +22,7 @@ function SideBarItem({ menu }: Props) {
       cursor="pointer"
       transition="all 200ms ease-out"
       _hover={{ bgColor: "gray.100" }}
+      onClick={() => closeMobileMenu && closeMobileMenu()}
     >
       <Icon
         as={menu.icon}
