@@ -5,6 +5,7 @@ import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+import customTheme from "utils/customTheme";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -13,7 +14,7 @@ const root = ReactDOM.createRoot(container);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ColorModeScript />
+      <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
       <App />
     </BrowserRouter>
   </React.StrictMode>
