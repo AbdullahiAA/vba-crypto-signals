@@ -13,7 +13,12 @@ function SignalGroups() {
             label: "Groups You Manage",
             content: <MyGroups />,
             tabSideInfo: (
-              <Button colorScheme="primary" variant="link" w="fit-content">
+              <Button
+                colorScheme="primary"
+                color="primary.500"
+                variant="link"
+                w="fit-content"
+              >
                 <VBAText variant="H7" color="inherit">
                   Create New Signal Group
                 </VBAText>

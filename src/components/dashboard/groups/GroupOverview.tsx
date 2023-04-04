@@ -21,7 +21,7 @@ function GroupOverview({ group }: Props) {
           </VBAText>
         </Box>
 
-        <Button colorScheme="primary" variant="ghost">
+        <Button colorScheme="primary" color="primary.500" variant="ghost">
           <VBAText variant="H8" color="inherit">
             Edit Signal Group
           </VBAText>
@@ -63,7 +63,7 @@ function GroupOverview({ group }: Props) {
       </Flex>
 
       <Flex>
-        <Button colorScheme="primary" variant="outline">
+        <Button colorScheme="primary" color="primary.500" variant="outline">
           <VBAText variant="H8" color="inherit">
             View Signal Group
           </VBAText>

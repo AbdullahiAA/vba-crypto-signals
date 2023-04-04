@@ -13,7 +13,7 @@ function GroupMemberships({ group }: Props) {
         <VBAText variant="H6">Memberships</VBAText>
 
         <Flex>
-          <Button colorScheme="primary" variant="outline">
+          <Button colorScheme="primary" color="primary.500" variant="outline">
             <VBAText variant="H8" color="inherit">
               Invite Members
             </VBAText>
