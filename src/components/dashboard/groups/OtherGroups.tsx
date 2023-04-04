@@ -8,7 +8,11 @@ function OtherGroups() {
 
   return (
     <SimpleGrid columns={[1, 1, 2, 3]} gap={6}>
-      <GroupsList groups={otherGroups} setActiveGroup={setActiveGroup} />
+      <GroupsList
+        groups={otherGroups}
+        setActiveGroup={setActiveGroup}
+        title="Other Signal Groups"
+      />
       <GroupOverview group={activeGroup} />
       <GroupMemberships group={activeGroup} />
     </SimpleGrid>

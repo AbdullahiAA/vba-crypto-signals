@@ -1,4 +1,5 @@
 import { Flex, Icon } from "@chakra-ui/react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IMenu } from "types/global";
 import { VBAText } from "..";
 
@@ -8,7 +9,9 @@ interface Props {
 }
 
 function SideBarItem({ menu, closeMobileMenu }: Props) {
-  const isActive = menu.name === "Dashboard";
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isActive = menu.href === location.pathname;
 
   return (
     <Flex
@@ -22,7 +25,10 @@ function SideBarItem({ menu, closeMobileMenu }: Props) {
       cursor="pointer"
       transition="all 200ms ease-out"
       _hover={{ bgColor: "gray.100" }}
-      onClick={() => closeMobileMenu && closeMobileMenu()}
+      onClick={() => {
+        navigate(menu.href);
+        closeMobileMenu && closeMobileMenu();
+      }}
     >
       <Icon
         as={menu.icon}

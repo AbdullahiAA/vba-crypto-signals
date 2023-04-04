@@ -8,30 +8,31 @@ import {
   SignalIcon,
   DarkModeIcon,
 } from "utils/customIcons";
+import { AllRoutes } from "utils/routes";
 
 export const menuList: Array<IMenu | "divider"> = [
   {
     name: "Dashboard",
     icon: DashboardIcon,
-    href: "Routes.dashboard",
+    href: AllRoutes.dashboard,
   },
 
   {
     name: "Analytics",
     icon: AnalyticsIcon,
-    href: "Routes.dashboard",
+    href: AllRoutes.analytics,
   },
 
   {
     name: "Positions",
     icon: PositionsIcon,
-    href: "Routes.dashboard",
+    href: AllRoutes.positions,
   },
 
   {
     name: "Notifications",
     icon: NotificationsIcon,
-    href: "Routes.dashboard",
+    href: AllRoutes.notifications,
   },
 
   "divider",
@@ -39,13 +40,13 @@ export const menuList: Array<IMenu | "divider"> = [
   {
     name: "Bots",
     icon: BotsIcon,
-    href: "Routes.dashboard",
+    href: AllRoutes.bots,
   },
 
   {
     name: "Signal Groups",
     icon: SignalIcon,
-    href: "Routes.dashboard",
+    href: AllRoutes.signalGroups,
     isAutoActive: true,
   },
 
@@ -54,6 +55,6 @@ export const menuList: Array<IMenu | "divider"> = [
   {
     name: "Dark Mode",
     icon: DarkModeIcon,
-    href: "Routes.dashboard",
+    href: "#",
   },
 ];
