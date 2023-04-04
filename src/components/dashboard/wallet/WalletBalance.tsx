@@ -1,6 +1,6 @@
-import { Circle, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { GrayCard, VBAHeading } from "components/global";
-import { WalletBalanceItem } from "..";
+import { BalanceChart, WalletBalanceItem } from "..";
 
 function WalletBalance() {
   return (
@@ -41,11 +41,7 @@ function WalletBalance() {
           />
         </Flex>
 
-        <Circle
-          size="170px"
-          border="3px solid rgba(0, 182, 255, 0.2)"
-          mx={{ base: "auto", md: "initial" }}
-        ></Circle>
+        <BalanceChart />
       </Flex>
     </GrayCard>
   );

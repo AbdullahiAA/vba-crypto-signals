@@ -17,8 +17,6 @@ function MainLayout({ children }: BoxProps) {
     fallback: false,
   })[0];
 
-  console.log(isSidebarOverlay);
-
   return (
     <Flex
       flexDir="column"
